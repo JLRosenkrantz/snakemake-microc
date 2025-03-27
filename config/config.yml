@@ -1,0 +1,14 @@
+# Configuration file for Micro-C Snakemake workflow
+
+# Reference genome
+reference_genome: "/home/groups/hoolock2/u0/genomes/ucsc/hg38/indexes/bwa/hg38.fa.gz"
+
+# Genome file (generated from reference index)
+genome_file: "/home/groups/hoolock2/u0/genomes/ucsc/hg38/hg38.genome"
+
+# Chromosome sizes file
+chrsizes: "/home/groups/hoolock2/u0/genomes/ucsc/hg38/hg38.chrom.sizes"
+
+
+ASMBLY: "hg38"
+
