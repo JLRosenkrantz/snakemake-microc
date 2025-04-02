@@ -28,14 +28,15 @@ If you haven't already installed Conda and Snakemake:
 ## Input Data Requirements
 
 ### 1. Raw Data
-- Copy raw sequencing files into the **`raw-data/`** directory.
+- Create new directory for storing raw data `mkdir -p data/raw`
+- Copy raw sequencing files into the **`data/raw/`** directory. If you have **write access** to the raw data files, create symbolic links to avoid duplication. If you **do not have write access**, copy the files instead.
 -   Only **`.fastq.gz`** files are accepted.
 -   If your files are not .gz compressed, use `gzip` or `pigz` tool to compress
 
 ### 2. Sample Naming Convention
 - Files must be named using the following format: `Sample1_R1.fastq.gz`, `Sample1_R2.fastq.gz`
 -   `_R1` → Read 1 of paired-end sequencing
--   `_R2` → Read 2 of paired-end sequencing\
+-   `_R2` → Read 2 of paired-end sequencing
 - **Incorrect names will cause the workflow to fail.**
 - **Manually rename files if needed** before running the workflow.
 
@@ -83,7 +84,7 @@ Before running, test for missing files or errors:
 snakemake --use-conda -np
 ```
 
-### 2. Run the Workflow (on hoolock)
+### 2. Run the Workflow (on hoolock2)
 
 If running on hoolock2, start a screen session (so workflow will continue even after exiting session):
 ```
@@ -106,7 +107,7 @@ all results are located in newly generated results/ folder, including:
 - fastqc/multiqc reports
 - Mapping results
 - Summary stats of mapping results
-- .cool and .hic files for generating analyzing and visualizing data
+- .hic files for analyzing and visualizing data
  
 
 

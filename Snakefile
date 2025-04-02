@@ -31,6 +31,12 @@ rule all:
         expand("results/mapped/{sample}/{sample}.duplication_stats_summary.txt", sample=samples),
         expand("results/mapped/{sample}/{sample}.complexity.txt", sample=samples),
         expand("results/hic/{sample}.contact_map.hic", sample=samples),
+        expand("results/mapped/{sample}/{sample}.mapped.pairs.gz", sample=samples),
+        expand("results/mapped/{sample}/{sample}.mapped.pairs.gz.px2", sample=samples),
+        expand("results/cool/{sample}.cool", sample=samples),
+        expand("results/cool/{sample}.mcool", sample=samples),
+        expand("results/TADs/{sample}_min10_max60_fdr01_d01_boundaries.bed", sample=samples),
+        
 
 rule fastqc:
     input:
